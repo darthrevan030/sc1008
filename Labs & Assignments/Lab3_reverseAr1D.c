@@ -72,7 +72,7 @@ void reverseAr1D(int ar[], int size){
     int temp;
     
     for(int i = 0; i < size; i++){
-        temp[i] = ar[i];
+        temp = ar[i];
         ar[i] = ar[size - 1 - i];
         ar[size - 1 - i] = temp;
     }
