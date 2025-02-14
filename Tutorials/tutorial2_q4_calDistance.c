@@ -21,6 +21,17 @@ int main()
     return 0;
 }
 
+
+/*accepts four decimal values representing the coordinates 
+of two points, i.e. (x1, y1) and (x2, y2), on a plane, and calculates and displays the distance between the points: 
+
+distance = sqrt( ((x2 - x1)^2) - ((y2 - y1)^2) )
+
+Provide two versions of the function for calculating the distance: 
+(a) one uses call by value only for passing parameters;
+(b) the other uses call by reference to pass the result to the calling function. */
+
+
 // scanf: floating / double = %lf placeholder 
 void inputXY(double *x1, double *y1, double *x2, double *y2)
 {

@@ -29,6 +29,32 @@ int main(){
 return 0;
 }
 
+/* takes a square matrix ar, and the array sizes for the rows and columns as parameters, 
+and returns the transpose of the array via call by reference. 
+
+For example, if the rowSize is 4, colSize is 4, and the array ar is {1,2,3,4, 5,1,2,2, 6,3,4,4, 7,5,6,7}, 
+then the resultant array will be {1,5,6,7, 2,1,3,5, 3,2,4,6, 4,2,4,7}. 
+
+That is, for the 4-by-4 matrix: 
+
+    1   2   3   4 
+    5   1   2   2 
+    6   3   4   4 
+    7   5   6   7 
+
+The resultant array after performing the transpose2D function is:  
+
+    1   5   6   7 
+    2   1   3   5 
+    3   2   4   6 
+    4   2   4   7
+
+SIZE is a constant defined at the beginning of the program. For example, #define SIZE 10. 
+The parameters rowSize and colSize are used to specify the dimensions of the 2
+dimensional array (e.g. 4x4) that the function should process.
+
+*/
+
 
 void display(int ar[][SIZE], int rowSize, int colSize){
     int l,m;
