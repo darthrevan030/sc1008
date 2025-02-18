@@ -46,5 +46,5 @@ char *stringncpy(char *s1, char *s2, int n){
         s1[h] = '\0';
     }
 
-    return 0;
+    return s1;
 }
