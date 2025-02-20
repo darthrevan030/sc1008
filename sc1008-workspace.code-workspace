@@ -24,6 +24,9 @@
             "titleBar.inactiveBackground": "#03301d99",
             "titleBar.inactiveForeground": "#e7e7e799"
         },
-		"peacock.color": "03301d"
+        "peacock.color": "03301d",
+        "files.associations": {
+            "W5_Assignment_matShifting.C": "cpp"
+        }
 	}
 }
