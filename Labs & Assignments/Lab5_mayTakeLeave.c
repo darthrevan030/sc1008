@@ -67,8 +67,28 @@ void printList(leaveRecord list[], int n){
 } 
 
 void getInput(leaveRecord list[], int *n){
-  /* Write your program code here */ 
+    int i;
+    
+    printf("Enter the number of staff records: \n");
+    scanf("%d", n);
+    
+    for (i = 0; i < *n; i++) {
+        printf("Enter id, totalleave, leavetaken: \n");
+        scanf("%d %d %d", &list[i].id, &list[i].totalLeave, &list[i].leaveTaken);
+    }
 }
 int mayTakeLeave(leaveRecord list[], int id, int leave, int n){
-  /* Write your program code here */ 
+    int i;
+    
+    for (i = 0; i < n; i++) {
+        if (list[i].id == id) {
+            if (list[i].leaveTaken + leave <= list[i].totalLeave) {
+                return 1; // Leave approved
+            } else {
+                return 0; // Leave denied
+            }
+        }
+    }
+    
+    return -1; // Staff not found
 } 
