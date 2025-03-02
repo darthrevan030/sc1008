@@ -28,9 +28,27 @@ int main(){
 }
 
 void nextCustomer(struct account *acct){   
-  /* Write your code here */ 
+    printf("Enter names (firstName lastName): \n");
+    scanf("%s %s", acct->names.firstName, acct->names.lastName);
+    
+    // Check if this is the termination condition - if so, we're done
+    if ((strcmp(acct->names.firstName, "End") == 0) && 
+        (strcmp(acct->names.lastName, "Customer") == 0))
+        return;
+    
+    printf("Enter account number: \n");
+    scanf("%d", &acct->accountNum);
+    
+    printf("Enter balance: \n");
+    scanf("%lf", &acct->balance);
 }
 
 void  printCustomer(struct account acct){   
-  /* Write your code here */ 
-}
+    
+    printf("Customer record: \n");
+    printf("%s %s %d %.2f\n", 
+            acct.names.firstName, 
+            acct.names.lastName, 
+            acct.accountNum, 
+            acct.balance);
+    }
