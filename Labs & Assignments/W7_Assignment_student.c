@@ -19,7 +19,7 @@ int main(){
     int result;    char dummy[80]; 
 
     printf("Select one of the following options: \n"); 
-    printf("1: inputStud()\n");      
+    printf("1: inputStud()\n");
     printf("2: removeStud()\n"); 
     printf("3: printStud()\n"); 
     printf("4: exit()\n");       
@@ -79,20 +79,48 @@ void inputStud(Student *s, int size){
 
 void printStud(Student *s, int size)  
 { 
-    int i; 
+    int i;
+    char *p;
+    char dummy[80];
     
-    printf("The current student list: \n"); 
-    
-    if (size==0)  
-        printf("Empty array\n"); 
-    else { 
-        for (i=0; i<size; i++) {
-            printf("Student ID: %d ", s[i].id); 
-            printf("Student Name: %s\n", s[i].name); 
-        } 
-    } 
+    for (i = 0; i < size; i++) {
+        printf("Student ID: \n");
+        scanf("%d", &(s[i].id));
+        printf("Student Name: \n");
+        fgets(dummy, 80, stdin);  // Clear the input buffer
+        fgets(s[i].name, 80, stdin);  // Get the student name
+        if ((p = strchr(s[i].name, '\n'))) 
+            *p = '\0';  // Remove newline character
+    }
 } 
 
 int removeStud(Student *s, int *size, char *target){ 
-    /* Write your code here */ 
+    int i, j;
+    int found = 0;
+    
+    /* Check if array is empty */
+    if (*size == 0)
+        return 1;
+    
+    /* Search for the target name */
+    for (i = 0; i < *size; i++) {
+        if (strcmp(s[i].name, target) == 0) {
+            found = 1;
+            break;
+        }
+    }
+    
+    /* If target not found */
+    if (!found)
+        return 2;
+    
+    /* Remove the target by shifting elements */
+    for (j = i; j < *size - 1; j++) {
+        s[j] = s[j + 1];
+    }
+    
+    /* Decrement size after removal */
+    (*size)--;
+    
+    return 0;
 } 
