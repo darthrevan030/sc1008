@@ -2,26 +2,24 @@
 #include <math.h> 
 
 int main(){
-    int bin;
+    char bin[50];
     int decVal = 0;
 
-    int base = 1;
-    int temp = bin;
+    int i = 0;
+    int length = 0;
 
     printf("Enter a binary number: \n");
-    scanf("%d", bin);
+    scanf("%s", bin);
 
-    while(temp){
-        int last_digit = temp % 10;
-
-        temp = temp / 10;
-
-        decVal += last_digit * base;
-
-        base = base * 2;
+    while (bin[length] != '\0'){
+        length++;
     }
     
-
+    for (i = 0; i < length; i++){
+        if (bin[i] == '1') {
+            decVal += pow(2, length - i - 1);
+        }
+    }
     printf("The equivalent decimal number: %d", decVal);
     return 0;
 
