@@ -15,9 +15,21 @@ int main(){
 }
 
 int square1(int num) {
-    
+    int square = 0;
+    int odd = 1;
+
+    for (int i = 0; i < num; i++){
+        square += odd;
+        odd += 2;
+    }
+    return square;
 }
 
 void square2(int num, int *result) {
-    
+    int odd = 1;
+
+    for (int i = 0; i < num; i++){
+        *result += odd;
+        odd += 2;
+    }
 }
