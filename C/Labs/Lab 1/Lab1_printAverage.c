@@ -26,6 +26,8 @@ int main() {
         
         float average = (float)sum / count;
         printf("Average = %.2f\n", average);
+
+        return 0;
     }
     
     return 0;
