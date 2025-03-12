@@ -46,15 +46,35 @@ int main(){
 
 
 void printNames(char nameptr[][80], int size){
-
+    
+    for (int i = 0; i < size; i++){
+        printf("%s ", nameptr[i]);
+    }
+    printf("\n");
 }
 
 
 void readNames(char nameptr[][80], int *size){
+    
+    char dummychar;
+    
+    printf("Enter size: \n");
+    scanf("%d", size);
+    scanf("%c", &dummychar);
+    printf("Enter %d names: \n", *size);
 
+    for (int i = 0; i < *size; i++){
+        scanf("%s", nameptr[i]);
+    }
 }
 
 
 int findTarget(char *target, char nameptr[][80], int size){
-
+    
+    for (int i = 0; i < size; i++){
+        if(strcmp(target, nameptr[i]) == 0){
+            return i;
+        }
+    }
+    return -1;
 }
