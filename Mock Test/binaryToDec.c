@@ -9,7 +9,7 @@ int main(){
     int length = 0;
 
     printf("Enter a binary number: \n");
-    scanf("%s", bin);
+    scanf("%49s", bin);
 
     while (bin[length] != '\0'){
         length++;
