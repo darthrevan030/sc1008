@@ -61,18 +61,10 @@ void display(int ar[][SIZE]) {
 } 
 
 void swap2Rows(int ar[][SIZE], int r1, int r2) { 
-    for (int j = 0; j < SIZE; j++) {
-        int temp = ar[r1][j];
-        ar[r1][j] = ar[r2][j];
-        ar[r2][j] = temp;
-    }
+
 
 } 
 
 void swap2Cols(int ar[][SIZE], int c1, int c2) { 
-    for (int i = 0; i < SIZE; i++) {
-        int temp = ar[i][c1];
-        ar[i][c1] = ar[i][c2];
-        ar[i][c2] = temp;
-    }
+
 }

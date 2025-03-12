@@ -44,17 +44,41 @@ int main(){
     return 0;
 }
 
-
+/*Simple loop to print each name with space separator*/
 void printNames(char nameptr[][80], int size){
-
+    int i;
+    for (i = 0; i < size; i++) {
+        printf("%s ", nameptr[i]);
+    }
+    printf("\n");
 }
 
-
+/*Get size first using pointer to return it
+Handle input buffer issues with dummy character
+Read names into 2D char array*/
 void readNames(char nameptr[][80], int *size){
+    int i;
+    char dummychar;
 
+    printf("Enter size: \n");
+    scanf("%d", size);
+    scanf("%c", &dummychar);
+    printf("Enter %d names: \n", *size);
+    
+    for(i = 0; i < * size; i++){
+        scanf("%s", nameptr[i]);
+    }
 }
 
-
+/*Linear search through names array
+Use strcmp for string comparison
+Return index if found, -1 if not found*/
 int findTarget(char *target, char nameptr[][80], int size){
-
+    int i;
+    for (i = 0; i < size; i++) {
+        if (strcmp(nameptr[i], target) == 0) {
+            return i;
+        }
+    }
+    return -1;
 }

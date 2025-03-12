@@ -39,43 +39,9 @@ int main()
 } 
 
 float compute1(bexpression expr){
-    switch(expr.op) {
-        case '+':
-            return expr.operand1 + expr.operand2;
-        case '-':
-            return expr.operand1 - expr.operand2;
-        case '*':
-            return expr.operand1 * expr.operand2;
-        case '/':
-            if(expr.operand2 != 0) {
-                return expr.operand1 / expr.operand2;
-            } else {
-                printf("Error: Division by zero!\n");
-                return 0;
-            }
-        default:
-            printf("Error: Invalid operator '%c'\n", expr.op);
-            return 0;
-    }
+
 } 
 
 float compute2(bexpression *expr){
-    switch(expr->op) {
-        case '+':
-            return expr->operand1 + expr->operand2;
-        case '-':
-            return expr->operand1 - expr->operand2;
-        case '*':
-            return expr->operand1 * expr->operand2;
-        case '/':
-            if(expr->operand2 != 0) {
-                return expr->operand1 / expr->operand2;
-            } else {
-                printf("Error: Division by zero!\n");
-                return 0;
-            }
-        default:
-            printf("Error: Invalid operator '%c'\n", expr->op);
-            return 0;
-    }
+
 } 
