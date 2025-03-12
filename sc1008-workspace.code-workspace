@@ -27,6 +27,10 @@
         "peacock.color": "03301d",
         "files.associations": {
             "W5_Assignment_matShifting.C": "cpp"
+        },
+        "editor.tokenColorCustomizations": {
+            "comments": "",
+            "textMateRules": []
         }
 	}
 }
