@@ -29,5 +29,13 @@ int rSquare1(int num){
 
 void rSquare2(int num, int *result){ 
 
+   if (num == 0){
+      *result = 0;
+      return;
+   }
+
+   rSquare2(num - 1, result);
+
+   *result += (num * 2 - 1);
 
 }
