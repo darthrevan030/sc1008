@@ -18,6 +18,15 @@ int main(){
 
 
 char *sweepSpace(char *str){
-
+    int i, j;
+    
+    for (i = 0, j = 0; str[i] != '\0'; i++){
+        if (str[i] != ' '){
+            str[j] = str[i];
+            j++;
+        }
+    }
+    str[j] = '\0';
+    return str;
 }
 
