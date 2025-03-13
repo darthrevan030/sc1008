@@ -67,5 +67,28 @@ float compute1(bexpression expr){
 } 
 
 float compute2(bexpression *expr){
+    float result = 0;
 
-} 
+    switch(expr->op){
+        case '+':
+            result = expr->operand1 + expr->operand2;
+            return result;
+        case '-':
+            result = expr->operand1 - expr->operand2;
+            return result;
+        case '*':
+            result = expr->operand1 * expr->operand2;
+            return result;
+        case '/':
+            if (expr->operand2 != 0){
+            result = expr->operand1 / expr->operand2;
+            return result;
+            } else {
+                printf("Error: Division by zero\n");
+                return 0;
+            }
+        default:
+        printf("Error Invalid Operator %c\n", expr->op);
+            break;
+    } 
+}
