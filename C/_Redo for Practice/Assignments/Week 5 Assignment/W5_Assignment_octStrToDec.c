@@ -25,11 +25,5 @@ Only process valid octal digits (0-7)
 Process string left to right*/
 
 int octStrTodec(char *str){
-    int result = 0;
-    while (*str != '\0') {
-        // Convert octal to decimal
-        result = result * 8 + (*str - '0');
-        str++;
-    }
-    return result;
+
 }

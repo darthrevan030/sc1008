@@ -29,18 +29,5 @@ int main(){
 }
 
 char *longestStrInAr(char str[N][40], int size, int *length) { 
-    int i;
-    int maxLen = strlen(str[0]);  // Initialize with the length of the first string
-    char *longest = str[0];       // Pointer to the longest string
 
-    for (i = 1; i < size; i++) {
-        int len = strlen(str[i]);
-        if (len > maxLen) {
-            maxLen = len;
-            longest = str[i];  // Update pointer to the new longest string
-        }
-    }
-
-    *length = maxLen;  // Set the length via pointer parameter
-    return longest;    // Return the longest string
 }

@@ -30,12 +30,5 @@ Initialize sums to 0 before accumulating
 One loop can handle both diagonals simultaneously*/
 
 void diagonals2D(int ar[][SIZE], int rowSize, int colSize, int *sum1, int *sum2){
-    int i;
-    *sum1 = 0;
-    *sum2 = 0;
-    
-    for (i = 0; i < rowSize && i < colSize; i++) {
-        *sum1 += ar[i][i];  // Main diagonal
-        *sum2 += ar[i][colSize-1-i];  // Secondary diagonal
-    }
+
 }

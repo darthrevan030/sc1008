@@ -31,9 +31,5 @@ int main() {
 } 
 
 void matShifting(int a[M][M], int b[M][M], int n) { 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-          b[i][(j + 1) % n] = a[i][j]; // Shift column data right
-        }
-    }
+
 } 

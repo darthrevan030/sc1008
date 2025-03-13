@@ -23,9 +23,7 @@ int main()
 
     return 0; 
 } 
+
 void findAverage2D(float matrix[4][4]) { 
-    for (int i = 0; i < 4; i++) {
-        float sum = matrix[i][0] + matrix[i][1] + matrix[i][2]; // Sum of first 3 elements in the row
-        matrix[i][3] = sum / 3.0f; // Store average in the last column
-    }
+
 }

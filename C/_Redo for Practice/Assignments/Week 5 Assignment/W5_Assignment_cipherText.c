@@ -65,29 +65,7 @@ Decipher function is mirror of cipher, decrementing instead of incrementing
 Handle both uppercase and lowercase separately*/
 
 void cipher(char *s){
-    while (*s != '\0') {
-        if ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z')) {
-            if (*s == 'z')
-                *s = 'a';
-            else if (*s == 'Z')
-                *s = 'A';
-            else
-                (*s)++;
-        }
-        s++;
-    }
+
 }
 
 void decipher(char *s){
-    while (*s != '\0') {
-        if ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z')) {
-            if (*s == 'a')
-                *s = 'z';
-            else if (*s == 'A')
-                *s = 'Z';
-            else
-                (*s)--;
-        }
-        s++;
-    }
-}

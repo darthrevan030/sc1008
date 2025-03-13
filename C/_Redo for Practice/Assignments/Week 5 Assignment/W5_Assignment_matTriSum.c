@@ -23,12 +23,5 @@ int main(){
 } 
 
 int matTriSum(int x[M][M], int n){
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = i; j < n; j++) { // Only upper triangular elements
-            sum += x[i][j];
-        }
-    }
-    return sum;
 
 } 

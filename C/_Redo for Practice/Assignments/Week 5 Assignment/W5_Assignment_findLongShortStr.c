@@ -26,31 +26,5 @@ return 0;
 }
 
 void findLongShortStr(char str[N][81], char *longStr, char *shortStr, int size){
-    int i;
-    int maxLen, minLen;
-    
-    // Initialize with first string's length
-    maxLen = strlen(str[0]);
-    minLen = strlen(str[0]);
-    
-    // Copy first string to both long and short
-    strcpy(longStr, str[0]);
-    strcpy(shortStr, str[0]);
-    
-    // Iterate through remaining strings
-    for(i = 1; i < size; i++) {
-        int currentLen = strlen(str[i]);
-        
-        // Check for longer string
-        if(currentLen > maxLen) {
-            maxLen = currentLen;
-            strcpy(longStr, str[i]);
-        }
-        
-        // Check for shorter string
-        if(currentLen < minLen) {
-            minLen = currentLen;
-            strcpy(shortStr, str[i]);
-        }
-    }
+
 } 
