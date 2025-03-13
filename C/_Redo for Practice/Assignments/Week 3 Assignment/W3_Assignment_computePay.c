@@ -21,7 +21,7 @@ return 0;
 
 double computePay1(int noOfHours, int payRate) {
     int overtime;
-    int overtimePay;
+    double overtimePay;
     double grossPay;
 
     if (noOfHours > 160) {
@@ -39,5 +39,16 @@ double computePay1(int noOfHours, int payRate) {
 }
 
 void computePay2(int noOfHours, int payRate, double *grossPay) {
+    int overtime;
+    double overtimePay;
 
+    if (noOfHours > 160){
+        overtime = noOfHours - 160;
+
+        overtimePay = payRate * 1.5;
+
+        *grossPay = (overtime * overtimePay) + (160 * payRate);
+    } else {
+        *grossPay = noOfHours * payRate;
+    }
 }
