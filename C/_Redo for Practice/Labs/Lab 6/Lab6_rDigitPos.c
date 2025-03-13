@@ -38,6 +38,16 @@ int rDigitPos1(int num, int digit){
 
 } 
 
-void rDigitPos2(int num, int digit, int *pos){   
+void rDigitPos2(int num, int digit, int *pos){
 
+   if (num == 0){
+      *pos = 1;
+      return;
+   }
+
+   rDigitPos2(num / 10, digit, pos);
+
+   if (*pos > 0){
+      *pos += 1;
+   }
 }
