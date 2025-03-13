@@ -8,7 +8,7 @@ int main(){
     printf("Enter a number: \n"); 
     scanf("%d", &number); 
     rExtEvenDigits(number, &result); 
-    printf("rExtEveneDigits(): %d\n", result); 
+    printf("rExtEvenDigits(): %d\n", result); 
     return 0; 
 } 
 
