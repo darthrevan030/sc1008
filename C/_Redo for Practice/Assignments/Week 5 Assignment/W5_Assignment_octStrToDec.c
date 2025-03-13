@@ -26,4 +26,11 @@ Process string left to right*/
 
 int octStrTodec(char *str){
 
+    int result = 0;
+
+    while (*str != '\0'){
+        result = result * 8 + (*str - '0');
+        str++;
+    }
+    return result;
 }
