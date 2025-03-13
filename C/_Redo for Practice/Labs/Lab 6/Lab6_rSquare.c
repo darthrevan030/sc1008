@@ -17,8 +17,17 @@ int main(){
 
 int rSquare1(int num){ 
 
+   if (num == 0){
+      return 0;
+   }
+
+   int oddInt = 2 * num - 1;
+
+   return oddInt + rSquare1(num - 1);
+
 }
 
 void rSquare2(int num, int *result){ 
+
 
 }
