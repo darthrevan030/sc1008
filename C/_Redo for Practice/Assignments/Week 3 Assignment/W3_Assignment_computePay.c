@@ -20,27 +20,9 @@ return 0;
 }   
 
 double computePay1(int noOfHours, int payRate) {
-    double grossPay;
-    
-    if (noOfHours <= 160) {
-        // All hours at regular rate
-        grossPay = noOfHours * payRate;
-    } else {
-        // First 160 hours at regular rate
-        // Remaining hours at 1.5x rate
-        grossPay = (160 * payRate) + ((noOfHours - 160) * payRate * 1.5);
-    }
-    
-    return grossPay;
+
 }
 
 void computePay2(int noOfHours, int payRate, double *grossPay) {
-    if (noOfHours <= 160) {
-        // All hours at regular rate
-        *grossPay = noOfHours * payRate;
-    } else {
-        // First 160 hours at regular rate
-        // Remaining hours at 1.5x rate
-        *grossPay = (160 * payRate) + ((noOfHours - 160) * payRate * 1.5);
-    }
+
 }
