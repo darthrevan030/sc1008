@@ -16,9 +16,7 @@ int main(){
 } 
 
 int rNumDigits1(int num){ 
-
-   num /= 10;
-
+   
    if (num == 0){
       return 1;
    } 
@@ -28,10 +26,21 @@ int rNumDigits1(int num){
    } else {
       return 1 + rNumDigits1(num / 10);
    }
-   
+
 
 } 
 
 void rNumDigits2(int num, int *result){ 
 
+   if (num == 0){
+      *result = 1;
+      return;
+   }
+
+   if (num / 10 == 0){
+      *result = 1;
+   } else {
+      rNumDigits2(num / 10, result);
+      *result += 1;
+   }
 }
