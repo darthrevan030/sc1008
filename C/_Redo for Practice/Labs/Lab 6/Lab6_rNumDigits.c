@@ -17,6 +17,19 @@ int main(){
 
 int rNumDigits1(int num){ 
 
+   num /= 10;
+
+   if (num == 0){
+      return 1;
+   } 
+   
+   if (num / 10 == 0){
+      return 1;
+   } else {
+      return 1 + rNumDigits1(num / 10);
+   }
+   
+
 } 
 
 void rNumDigits2(int num, int *result){ 
