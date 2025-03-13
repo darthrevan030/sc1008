@@ -2,7 +2,7 @@
 #define INIT_VALUE 1000 
 
 typedef struct { 
-   int id;                   /* staff identifier */ 
+   int id;             /* staff identifier */ 
    int totalLeave;    /* the total number of days of leave allowed */ 
    int leaveTaken;   /* the number of days of leave taken so far */ 
 } leaveRecord; 
@@ -11,8 +11,7 @@ int mayTakeLeave(leaveRecord list[], int id, int leave, int n);
 void getInput(leaveRecord list[], int *n); 
 void printList(leaveRecord list[], int n); 
 
-int main() 
-{ 
+int main(){ 
     leaveRecord listRec[10]; 
 
     int len; 
@@ -59,15 +58,40 @@ int main()
     } while (choice < 4);
 
     return 0; 
-} 
+}
 
 void printList(leaveRecord list[], int n){
+    printf("The staff list:\n");
 
+    for (int i = 0; i < n; i++){
+        printf("id = %d, totalleave = %d, leave taken = %d\n", list[i].id, list[i].totalLeave, list[i].leaveTaken);
+    }
 } 
 
 void getInput(leaveRecord list[], int *n){
 
+    printf("Enter the number of staff records: \n");
+    scanf("%d", n);
+
+    for (int i = 0; i < *n; i++){
+        printf("Enter id, totalleave, leavetaken: \n");
+        scanf("%d", &list[i].id);
+        scanf("%d", &list[i].totalLeave);
+        scanf("%d", &list[i].leaveTaken);
+    }
 }
+
 int mayTakeLeave(leaveRecord list[], int id, int leave, int n){
 
-} 
+    for (int i = 0; i < n; i++){
+        if (id == list[i].id){
+            int found = 1;
+            if (list[i].leaveTaken + leave <= list[i].totalLeave){
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+    return -1;
+}
