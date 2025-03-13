@@ -16,43 +16,9 @@ int main(){
 }
 
 int rCountEvenDigits1(int num){ 
-    
-    // Base case: if number is 0, return 0
-    if (num == 0)
-        return 0;
-    
-    // Get the rightmost digit
-    int digit = num % 10;
-    
-    // Check if the digit is even
-    if (digit % 2 == 0)
-        return 1 + rCountEvenDigits1(num / 10);  // Count this digit + recursively count the rest
-    else
-        return rCountEvenDigits1(num / 10);      // Don't count this digit, just the rest
+
 } 
 
 void rCountEvenDigits2(int num, int *result){ 
-    
-    // Initialize result to 0 on first call
-    static int firstCall = 1;
-    if (firstCall) {
-        *result = 0;
-        firstCall = 0;
-    }
 
-    // Base case: if we've processed all digits
-    if (num == 0) {
-        firstCall = 1;  // Reset for next call
-        return;
-    }
-
-    // Get the rightmost digit
-    int digit = num % 10;
-
-    // Check if the digit is even
-    if (digit % 2 == 0)
-        (*result)++;  // Increment the count if the digit is even
-
-    // Recursively process the rest of the number
-    rCountEvenDigits2(num / 10, result);
 }
