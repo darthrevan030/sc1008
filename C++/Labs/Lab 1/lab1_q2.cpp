@@ -15,10 +15,17 @@ bool isZero(float num, float epsilon = 1e-6) {
 }
 
 // TO-DO: Write your code here
-//
-//
-int calculate(int a, int b, char opr){
-    
+template <typename T>
+T calculate(T a, T b, char opr) {
+    switch (opr) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': return (fabs(b) < 1e-6) ? 0 : a / b;
+        default:
+            cout << "Invalid operator!" << endl;
+            return 0;
+    }
 }
 
 
