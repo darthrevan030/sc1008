@@ -13,20 +13,38 @@ using namespace std;
 int getValidInt() {
 
     // TO-DO: Write your code here
-    //
-    //
-
-
+    int value;
+    while (true) {
+        cin >> value;
+        if (cin.fail()) {
+            cout << "Invalid input! Please enter an integer: ";
+            cin.clear();  // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Discard invalid input
+        } else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // Clear extra characters
+            return value;
+        }
+    }
 }
+
 
 // Function to get a valid float input
 float getValidFloat() {
 
     // TO-DO: Write your code here
-    //
-    //
-
-
+    float value;
+    
+    while (true) {
+        cin >> value;
+        if (cin.fail()) {
+            cout << "Invalid input! Please enter a valid float number: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            return value;
+        }
+    }
 }
 
 int main() {
