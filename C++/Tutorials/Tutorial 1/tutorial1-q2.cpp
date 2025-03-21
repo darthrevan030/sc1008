@@ -2,11 +2,12 @@
 using namespace std;
 
 // TO-DO: Write your functions here
-//
-//
-//
 
+double calArea(int side);
 
+double calArea(double length, double width);
+
+double calArea(double base1, double base2, double height);
 
 int main() {
     int choice;
@@ -50,4 +51,16 @@ int main() {
     }
     
     return 0;
+}
+
+double calArea(double side){
+    return side * side;
+}
+
+double calArea(double length, double width){
+    return length * width;
+}
+
+double calArea(double base1, double base2, double height){
+    return 0.5 * (base1 + base2) * height;
 }
