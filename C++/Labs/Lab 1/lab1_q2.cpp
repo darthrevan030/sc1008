@@ -21,9 +21,9 @@ T calculate(T a, T b, char opr) {
         case '+': return a + b;
         case '-': return a - b;
         case '*': return a * b;
-        case '/': return (fabs(b) < 1e-6) ? 0 : a / b;
+        case '/': return isZero(b) ? 0 : a / b;
         default:
-            cout << "Invalid operator!" << endl;
+            cout << "Invalid operator! Returning 0." << endl;
             return 0;
     }
 }
