@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-struct Node {
+struct Node{
     double value; 
     Node* next;
 };
 
-void printList(Node* head) {
+void printList(Node* head){
     Node* current = head;
 
     while (current) {
@@ -17,7 +17,7 @@ void printList(Node* head) {
 }
 
 
-void destroyList(Node*& head) {
+void destroyList(Node*& head){
     Node* nodePtr = head; 
     Node* garbage = nullptr;
 
@@ -33,7 +33,7 @@ void destroyList(Node*& head) {
     head = nullptr;
 }
 
-void insertNode2ListEnd(Node*& head, double newValue) {
+void insertNode2ListEnd(Node*& head, double newValue){
     Node* newNode = new Node;
     newNode->value = newValue;
     newNode->next = nullptr;
@@ -51,19 +51,12 @@ void insertNode2ListEnd(Node*& head, double newValue) {
 }
 
 // Function to concatenate two lists
-void concateTwoLists(Node*& firstList, Node*& secondList) {
+void concateTwoLists(Node*& firstList, Node*& secondList){
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
-
-
-
-
 
 }
 
-int main() {
+int main(){
     // Create first list: 1 -> 2 -> 3 -> NULL
     Node* firstList = nullptr;
     insertNode2ListEnd(firstList, 1);

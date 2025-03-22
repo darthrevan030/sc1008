@@ -3,13 +3,13 @@
 using namespace std;
 
 // Define the structure of a linked list node
-struct StringNode {
+struct StringNode{
     string name;
     StringNode* next;
 };
 
 // Function to print the linked list
-void printList(StringNode* head) {
+void printList(StringNode* head){
     StringNode* temp = head;
     cout << "Linked list: ";
     while (temp) {
@@ -20,7 +20,7 @@ void printList(StringNode* head) {
 }
 
 // Function to free allocated memory
-void deleteList(StringNode*& head) {
+void deleteList(StringNode*& head){
     while (head) {
         StringNode* temp = head;
         head = head->next;
@@ -32,18 +32,10 @@ void deleteList(StringNode*& head) {
 // Function to create a linked list from an array of strings
 void arrayToLinkedList(const string* arr, int size, StringNode*& head) {
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
-
-
-    
-
-
 
 }
 
-int main() {
+int main(){
     // Case 1
     string students[] = {"Alice", "Bob", "Charlie", "David"};
     int size = sizeof(students) / sizeof(students[0]);

@@ -1,23 +1,18 @@
 #include <iostream>
 using namespace std;
 
-struct ListNode {
+struct ListNode{
     int value;
     ListNode* next;
 };
 
 // TO-DO: You need to implement this function
-int getListLen(const ListNode* head) {
+int getListLen(const ListNode* head){
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
-
-
-
+    
 }
 
-int main() {
+int main(){
     // Creating a simple linked list: 10 -> 20 -> 30 -> 40
     ListNode* head = new ListNode;
     head->value = 10;

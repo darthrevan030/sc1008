@@ -3,14 +3,14 @@
 using namespace std;
 
 // Node structure
-struct Node {
+struct Node{
     double value; // Can be any data type
     Node* next;
 };
 
 
 // Function to print the linked list
-void printList(Node* head) {
+void printList(Node* head){
     Node* current = head;// Start at the head of the list
 
     while (current) { // Equivalent to "current != nullptr"
@@ -21,8 +21,7 @@ void printList(Node* head) {
 }
 
 
-void destroyList(Node*& head)
-{
+void destroyList(Node*& head){
     Node *nodePtr = head;  // Start at head of list
     Node *garbage = nullptr;
 
@@ -39,7 +38,7 @@ void destroyList(Node*& head)
     head = nullptr;
 }
 
-void insertNode2ListEnd(Node*& head, double newValue) {
+void insertNode2ListEnd(Node*& head, double newValue){
     Node* newNode = new Node;
     newNode->value = newValue;
     newNode->next = nullptr;
@@ -57,22 +56,14 @@ void insertNode2ListEnd(Node*& head, double newValue) {
 }
 
 
-void insertNode2SortedList(Node*& head, double number)
-{
+void insertNode2SortedList(Node*& head, double number){
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
-    
-
-
-
 
 }
 
 
 
-int main() {
+int main(){
     // Create the linked list
     Node* head = nullptr; // Start with an empty list
 
