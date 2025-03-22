@@ -11,7 +11,7 @@
 using namespace std;
 
 // Function to get a valid integer input
-int getValidInt() {
+int getValidInt(){
 
     // TO-DO: Write your code here
     int value;
@@ -30,7 +30,7 @@ int getValidInt() {
 
 
 // Function to get a valid float input
-float getValidFloat() {
+float getValidFloat(){
 
     // TO-DO: Write your code here
     float value;
@@ -48,7 +48,7 @@ float getValidFloat() {
     }
 }
 
-int main() {
+int main(){
     char name[50];  // Student name
     int studentID;  // Student ID
     float mathMark; // Math mark
