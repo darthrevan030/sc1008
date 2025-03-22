@@ -10,13 +10,13 @@
 #include <iostream>
 using namespace std;
 
-struct MarkNode {
+struct MarkNode{
     int mark; // Changed to int
     MarkNode* next;
 };
 
 // Function to insert a node at the end of the linked list
-void insertNode2ListEnd(MarkNode*& head, int newValue) {
+void insertNode2ListEnd(MarkNode*& head, int newValue){
     MarkNode* newNode = new MarkNode;
     newNode->mark = newValue;
     newNode->next = nullptr;
@@ -32,8 +32,8 @@ void insertNode2ListEnd(MarkNode*& head, int newValue) {
     }
     temp->next = newNode; // Link last node to new node
 }
-void destroyList(MarkNode*& head)
-{
+
+void destroyList(MarkNode*& head){
     MarkNode *nodePtr = head;  // Start at head of list
     MarkNode *garbage = nullptr;
 
@@ -51,18 +51,11 @@ void destroyList(MarkNode*& head)
 }
 
 // Function to get the value of the n-th node
-int getNthNodeValue(const MarkNode* head, int n) {
+int getNthNodeValue(const MarkNode* head, int n){
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
-
-
-    
-
 }
 
-int main() {
+int main(){
     MarkNode* head = nullptr; // Initialize an empty linked list
 
     // Insert nodes into the linked list

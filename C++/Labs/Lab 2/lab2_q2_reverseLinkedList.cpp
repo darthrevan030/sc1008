@@ -10,13 +10,12 @@
 #include <string>
 using namespace std;
 
-struct StringNode {
+struct StringNode{
     string name;
     StringNode* next;
 };
 
-void destroyList(StringNode*& head)
-{
+void destroyList(StringNode*& head){
     StringNode *nodePtr = head;  // Start at head of list
     StringNode *garbage = nullptr;
 
@@ -33,7 +32,7 @@ void destroyList(StringNode*& head)
     head = nullptr;
 }
 
-void printLinkedList(const StringNode* head) {
+void printLinkedList(const StringNode* head){
     const StringNode* current = head;
     while (current != nullptr) {
         cout << current->name;
@@ -45,7 +44,7 @@ void printLinkedList(const StringNode* head) {
     cout << endl;
 }
 
-void insertNode2ListEnd(StringNode*& head, const string& newName) {
+void insertNode2ListEnd(StringNode*& head, const string& newName){
     StringNode* newNode = new StringNode;
     newNode->name = newName;
     newNode->next = nullptr;
@@ -63,16 +62,11 @@ void insertNode2ListEnd(StringNode*& head, const string& newName) {
 }
 
 // Function to reverse the linked list
-void reverseLinkedList(StringNode*& head) {
+void reverseLinkedList(StringNode*& head){
     // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
-
-
 }
 
-int main() {
+int main(){
     StringNode* head = nullptr; // Initialize an empty linked list
 
     /////// Case 1 ////////////
