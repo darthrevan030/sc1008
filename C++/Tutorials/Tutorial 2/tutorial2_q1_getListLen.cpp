@@ -14,7 +14,7 @@ int getListLen(const ListNode* head){
     }
     
     int count = 0;
-    ListNode* current = const_cast<ListNode*>(head);
+    const ListNode* current = head; // Use const pointer to maintain const-correctness
     
     while (current != nullptr) {
         count++;
