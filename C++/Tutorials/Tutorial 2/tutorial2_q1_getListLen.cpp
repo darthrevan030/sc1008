@@ -9,7 +9,19 @@ struct ListNode{
 // TO-DO: You need to implement this function
 int getListLen(const ListNode* head){
     // TO-DO: WRITE YOUR CODE HERE
+    if (head == nullptr) {
+        return 0;
+    }
     
+    int count = 0;
+    ListNode* current = const_cast<ListNode*>(head);
+    
+    while (current != nullptr) {
+        count++;
+        current = current->next;
+    }
+    
+    return count;
 }
 
 int main(){
