@@ -51,9 +51,20 @@ void insertNode2ListEnd(Node*& head, double newValue){
 }
 
 // Function to concatenate two lists
-void concateTwoLists(Node*& firstList, Node*& secondList){
+void concatenateTwoLists(Node*& firstList, Node*& secondList){
     // TO-DO: WRITE YOUR CODE HERE
-
+    // If first list is empty, just point it to the second list
+    if (firstList == nullptr) {
+        firstList = secondList;
+    } else { // Otherwise, find the end of the first list and connect it to the second list
+        Node* temp = firstList;
+        while (temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = secondList;
+    }
+    // Set the second list pointer to nullptr to prevent it from being destroyed later
+    secondList = nullptr;
 }
 
 int main(){
@@ -90,12 +101,12 @@ int main(){
 
 
     // Concatenate secondList to firstList
-    concateTwoLists(firstList, secondList);
+    concatenateTwoLists(firstList, secondList);
     cout << "Concatenated First List: ";
     printList(firstList);
 
     // Concatenate thirdList to fourthList
-    concateTwoLists(fourthList, thirdList);
+    concatenateTwoLists(fourthList, thirdList);
     cout << "Concatenated Fourth List: ";
     printList(fourthList);
 
