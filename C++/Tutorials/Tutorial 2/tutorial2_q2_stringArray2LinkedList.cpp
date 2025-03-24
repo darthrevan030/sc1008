@@ -34,7 +34,9 @@ void arrayToLinkedList(const string* arr, int size, StringNode*& head){
     // TO-DO: WRITE YOUR CODE HERE
     head = nullptr; // Initialize head to nullptr
     
-    if (size <= 0) return; // Handle empty array case
+    if (size <= 0){ // Handle empty array case
+        return;
+    } 
     
     // Create the first node
     head = new StringNode;
