@@ -30,9 +30,31 @@ void deleteList(StringNode*& head){
 }
 
 // Function to create a linked list from an array of strings
-void arrayToLinkedList(const string* arr, int size, StringNode*& head) {
+void arrayToLinkedList(const string* arr, int size, StringNode*& head){
     // TO-DO: WRITE YOUR CODE HERE
-
+    head = nullptr; // Initialize head to nullptr
+    
+    if (size <= 0) return; // Handle empty array case
+    
+    // Create the first node
+    head = new StringNode;
+    head->name = arr[0];
+    head->next = nullptr;
+    
+    // Current pointer to track the last node
+    StringNode* current = head;
+    
+    // Create rest of the nodes
+    for (int i = 1; i < size; i++) {
+        // Create a new node
+        StringNode* newNode = new StringNode;
+        newNode->name = arr[i];
+        newNode->next = nullptr;
+        
+        // Link the new node to the list
+        current->next = newNode;
+        current = newNode;
+    }
 }
 
 int main(){
@@ -44,7 +66,7 @@ int main(){
     printList(head1);
 
     // Case 2
-    string companyNames[] = {"Microsoft", "Google", "Tecent", "Alibaba", "HP"};
+    string companyNames[] = {"Microsoft", "Google", "Tencent", "Alibaba", "HP"};
     size = sizeof(companyNames) / sizeof(companyNames[0]);
     StringNode* head2 = nullptr;
     arrayToLinkedList(companyNames, size, head2);
