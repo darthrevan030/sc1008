@@ -58,7 +58,28 @@ void insertNode2ListEnd(Node*& head, double newValue){
 
 void insertNode2SortedList(Node*& head, double number){
     // TO-DO: WRITE YOUR CODE HERE
+    // Create a new node with the given value
+    Node* newNode = new Node;
+    newNode->value = number;
+    newNode->next = nullptr;
 
+    // Case 1: Empty list or insert at beginning (new value is smaller than head)
+    if (head == nullptr || number < head->value) {
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+
+    // Case 2: Find position to insert in the sorted list
+    Node* current = head;
+    // Traverse the list to find proper position
+    while (current->next != nullptr && current->next->value < number) {
+        current = current->next;
+    }
+
+    // Insert the new node after current
+    newNode->next = current->next;
+    current->next = newNode;
 }
 
 
