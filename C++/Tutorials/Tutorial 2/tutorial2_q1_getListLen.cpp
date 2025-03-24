@@ -7,12 +7,14 @@ struct ListNode{
 };
 
 // TO-DO: You need to implement this function
+// This function calculates the length of a linked list.
+// It takes a pointer to the head of the list as input and returns the number of nodes in the list.
 int getListLen(const ListNode* head){
     // TO-DO: WRITE YOUR CODE HERE
     if (head == nullptr) {
         return 0;
     }
-    
+    const ListNode* current = head; // Use const pointer to maintain const-correctness, ensuring the function does not modify the input list while traversing it.
     int count = 0;
     const ListNode* current = head; // Use const pointer to maintain const-correctness
     
