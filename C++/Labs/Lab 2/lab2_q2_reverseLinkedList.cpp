@@ -64,6 +64,25 @@ void insertNode2ListEnd(StringNode*& head, const string& newName){
 // Function to reverse the linked list
 void reverseLinkedList(StringNode*& head){
     // TO-DO: WRITE YOUR CODE HERE
+    
+    if (head == nullptr || head -> next == nullptr){
+        return;
+    }
+
+    StringNode *prev = nullptr;
+    StringNode *cur = head;
+    StringNode *next = nullptr;
+
+    while (cur != nullptr){
+        next = cur -> next;
+        cur -> next = prev;
+
+        prev = cur;
+        cur = next;
+    }
+
+    head = prev;
+
 }
 
 int main(){
