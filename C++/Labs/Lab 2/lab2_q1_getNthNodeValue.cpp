@@ -53,6 +53,28 @@ void destroyList(MarkNode*& head){
 // Function to get the value of the n-th node
 int getNthNodeValue(const MarkNode* head, int n){
     // TO-DO: WRITE YOUR CODE HERE
+    // Check if the list is empty
+    if (head == nullptr) {
+        return -1;  // Return -1 for empty list
+    }
+    
+    // Initialize the current node and a position counter
+    const MarkNode* current = head;
+    int position = 1;  // Starting at position 1
+    
+    // Traverse until we reach the nth node or the end of the list
+    while (current != nullptr && position < n) {
+        current = current->next;
+        position++;
+    }
+    
+    // If we've reached the end of list before the nth position
+    if (current == nullptr) {
+        return -1;  // The position exceeds the length of the list
+    }
+    
+    // Return the value of the nth node
+    return current->mark;
 }
 
 int main(){
