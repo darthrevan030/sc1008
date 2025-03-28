@@ -14,7 +14,6 @@ int getListLen(const ListNode* head){
     }
     const ListNode* current = head; // Use const pointer to maintain const-correctness, ensuring the function does not modify the input list while traversing it.
     int count = 0;
-    const ListNode* current = head; // Use const pointer to maintain const-correctness
     
     while (current != nullptr) {
         count++;
