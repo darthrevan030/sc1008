@@ -40,14 +40,31 @@ void freeList(StringNode*& head) {
 }
 
 // Remove duplicate names from the linked list
-void removeDuplicatedNames(StringNode*& head) {
+void removeDuplicatedNames(StringNode*& head){
     // TO-DO: Write Your Code Here
-    //
-    //
-    //
-
-
-
+    if (!head || !head -> next) {
+        return;  // Empty list or single node, no duplicates to remove
+    }
+    
+    StringNode* current = head;
+    
+    while (current && current -> next) {
+        StringNode* runner = current;
+        
+        while (runner -> next) {
+            if (current -> name == runner -> next -> name) {
+                // Found a duplicate, remove it
+                StringNode* duplicate = runner -> next;
+                runner -> next = runner -> next -> next;
+                delete duplicate;
+            } else {
+                // Move to next node only if no removal happened
+                runner = runner -> next;
+            }
+        }
+        
+        current = current -> next;
+    }
 }
 
 int main() {
