@@ -3,15 +3,38 @@
 
 ////// To-do: Write Your Code Here//////////////
 // Template function mergeArrays()  to merge two arrays
-//
-//
+template <typename T>
+T* mergeArrays(T* arr1, int size1, T* arr2, int size2, T* mergedArray){
+    int i, j;
+    
+    mergedArray = new T[size1 + size2];
+    
+    for (i = 0; i < size1; i++){
+        mergedArray[i] = arr1[i];
+    }
+    for (j = 0; j < size2; j++){
+        mergedArray[size1 + j] = arr2[j];
+    }
 
+    return mergedArray;
+}
 
 
 ////// To-do: Write Your Code Here//////////////
 // Template function printAndDeallocate() to print and deallocate the merged array
-//
-//
+template <typename T>
+void printAndDeallocate(T* mergedArray, int size) {
+    if (mergedArray != nullptr) {
+        for (int i = 0; i < size; i++) {
+            std::cout << mergedArray[i];
+            if (i < size - 1) std::cout << ", ";
+        }
+        std::cout << std::endl;
+        delete[] mergedArray;
+    } else {
+        std::cout << "Empty array" << std::endl;
+    }
+}
 
 
 int main() {
