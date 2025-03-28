@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 ////// To-do: Write Your Code Here//////////////
 // Template function mergeArrays()  to merge two arrays
 template <typename T>
-T* mergeArrays(T* arr1, int size1, T* arr2, int size2, T* mergedArray){
+T* mergeArrays(T* arr1, int size1, T* arr2, int size2, T*& mergedArray){
     int i, j;
     
     mergedArray = new T[size1 + size2];
@@ -26,13 +27,15 @@ template <typename T>
 void printAndDeallocate(T* mergedArray, int size) {
     if (mergedArray != nullptr) {
         for (int i = 0; i < size; i++) {
-            std::cout << mergedArray[i];
-            if (i < size - 1) std::cout << ", ";
+            cout << mergedArray[i];
+            if (i < size - 1){
+                cout << " ";
+            }
         }
-        std::cout << std::endl;
+        cout << endl;
         delete[] mergedArray;
     } else {
-        std::cout << "Empty array" << std::endl;
+        cout << "Empty array" << endl;
     }
 }
 
