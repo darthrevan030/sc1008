@@ -8,29 +8,56 @@
 #include <iostream>
 
 class Complex {
-private:
-    double real;
-    double imag;
+    private:
+        double real;
+        double imag;
 
-public:
-    // Constructor
-    Complex(double r, double i) : real(r), imag(i) {}
+    public:
+        // Constructor
+        Complex(double r, double i) : real(r), imag(i) {}
 
-    // Overloading the + operator
-    // TODO: Write Your Code Here
-
-
-    // Overloading the - operator
-    // TODO: Write Your Code Here
-
-
-
-    // Overloading the << operator for output
-    friend std::ostream& operator<<(std::ostream& out, const Complex& c) {
+        // Overloading the + operator
         // TODO: Write Your Code Here
+        Complex operator+(const Complex &other) const{
+            return Complex(real + other.real, imag + other.imag);
+        }
+
+        // Overloading the - operator
+        // TODO: Write Your Code Here
+        Complex operator-(const Complex &other) const{
+            return Complex(real - other.real, imag - other.imag);
+        }
 
 
-    }
+        // Overloading the << operator for output
+        friend std::ostream& operator<<(std::ostream& out, const Complex& c) {
+            // TODO: Write Your Code Here
+            if (c.real == static_cast<int>(c.real)){ // check if the double input matches int conversion 
+                out << static_cast<int>(c.real);
+            } else {
+                out << c.real;
+            }
+
+            if (c.imag >= 0){
+                out << " + ";
+                if(c.imag == static_cast<int>(c.imag)){ // checks for the sign of the imaginary part as well as if decimal can be removed
+                    out << static_cast<int>(c.imag); // check if the double input matches int conversion
+                } else{
+                    out << c.imag;
+                }
+            } else {
+                out << " - ";
+                if(-c.imag == static_cast<int>(-c.imag)){
+                    out << static_cast<int>(-c.imag);
+                } else{
+                    out << -c.imag;
+                }
+            }
+
+            out << "i";
+
+            return out;
+        }
 };
 
 int main() {
