@@ -15,7 +15,7 @@ class Sports {
 protected:
     string sport; // sport name
 public:
-    // TO-DO 1: Implement the constructor and descructor
+    // TO-DO 1: Implement the constructor and destructor
     
     // Constructor
     Sports(string s) : sport(s) {
