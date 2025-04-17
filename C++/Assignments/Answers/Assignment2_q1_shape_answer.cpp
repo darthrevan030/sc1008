@@ -1,10 +1,11 @@
 ///////// Student Info/////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Samarth Bhatia
+//      Your NTU Email: samarth009@e.ntu.edu.sg
 //
 //
 //
+
 #include <iostream>
 #include <cmath>  // For M_PI
 #include <type_traits>  // Required for std::is_abstract
@@ -16,9 +17,20 @@ protected:
 
 public:
     // TO-DO: Please implement the constructor, the destructor and the calArea() function here 
-    //
-    //
 
+    // Constructor
+    Shape() {
+        area = 0.0;
+        std::cout << "Shape Constructor!" << std::endl;
+    }
+    
+    // Destructor
+    virtual ~Shape() {
+        std::cout << "Shape Destructor!" << std::endl;
+    }
+
+    // Pure virtual function
+    virtual void calArea() = 0;
 
     // Member function to get the area
     double getArea() const {
@@ -33,10 +45,21 @@ private:
 
 public:
     // TO-DO: Please implement the constructor, the destructor and OVERRIDE the calArea() function here 
-    //
-    // 
     
-
+    // Constructor
+    Circle(double r) : radius(r) {
+        std::cout << "Circle Constructor!" << std::endl;
+    }
+    
+    // Destructor
+    ~Circle() {
+        std::cout << "Circle Destructor!" << std::endl;
+    }
+    
+    // Override calArea function
+    void calArea() override {
+        area = M_PI * radius * radius;
+    }
 };
 
 // Derived class: Rectangle
@@ -47,10 +70,21 @@ private:
 
 public:
     // TO-DO: Please implement the constructor, the destructor and OVERRIDE the calArea() function here 
-    //
-    // 
-
-
+    
+    // Constructor
+    Rectangle(double w, double h) : width(w), height(h) {
+        std::cout << "Rectangle Constructor!" << std::endl;
+    }
+    
+    // Destructor
+    ~Rectangle() {
+        std::cout << "Rectangle Destructor!" << std::endl;
+    }
+    
+    // Override calArea function
+    void calArea() override {
+        area = width * height;
+    }
 };
 
 
