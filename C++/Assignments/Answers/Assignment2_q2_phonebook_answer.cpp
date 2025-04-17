@@ -1,10 +1,11 @@
 ///////// Student Info/////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Samarth Bhatia
+//      Your NTU Email: samarth009@e.ntu.edu.sg
 //
 //
 //
+
 #include <iostream>
 #include <map>
 #include <string>
@@ -17,22 +18,40 @@ private:
 
 public:
     // TO-DO: Implement the constructor
-    //
+    PhoneBook() {
+        // Initialize an empty map (no code needed as map is already default initialized)
+    }
 
     // TO-DO: Implement addContact(const string &name, const string &number) 
-    //
+    void addContact(const string &name, const string &number) {
+        contacts[name] = number;
+    }
 
 
     // TO-DO: Implement removeContact(const string &name) 
-    //
+    void removeContact(const string &name) {
+        contacts.erase(name);
+    }
 
 
     // TO-DO: Implement findContact(const string &name) 
-    //
+    string findContact(const string &name) {
+        auto it = contacts.find(name);
+        if (it != contacts.end()) {
+            return it->second;
+        } else {
+            return "Not Found!";
+        }
+    }
+
 
 
     // TO-DO: Implement displayAllContacts()
-    //
+    void displayAllContacts() {
+        for (const auto &contact : contacts) {
+            cout << contact.first << " -> " << contact.second << endl;
+        }
+    }
 
 };
 
