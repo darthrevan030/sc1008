@@ -1,3 +1,12 @@
+///////// Student Info/////////
+//
+//           Your Name: Samarth Bhatia
+//      Your NTU Email: samarth009@e.ntu.edu.sg
+//
+//
+//
+
+
 #include <iostream>
 #include <string>
 
